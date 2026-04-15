@@ -40,17 +40,18 @@ header {
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
-  background: #fff;
-  border-radius: 10px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 24px;
-  color: #0a2847;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .logo-text {
@@ -441,7 +442,22 @@ footer {
 <div class="container">
   <header>
     <div class="logo-area">
-      <div class="logo">UM</div>
+      <div class="logo">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
+          <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#ffffff;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <rect width="200" height="200" fill="none"/>
+          <!-- Folha grande branca -->
+          <path d="M 70 40 Q 110 40 120 80 L 120 160 Q 120 170 110 170 L 70 170 Q 60 170 60 160 L 60 80 Q 60 40 70 40 Z" fill="#ffffff"/>
+          <!-- Linhas azul marinho -->
+          <path d="M 85 100 Q 95 110 105 105" stroke="#0a2847" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M 80 120 Q 100 130 115 120" stroke="#0a2847" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
       <div class="logo-text">Unit Media</div>
     </div>
     <h1>Nova Clínica Sorriso</h1>
@@ -501,45 +517,6 @@ footer {
         </div>
       </div>
 
-      <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem; color: #1a1a1a; margin-top: 2rem;">✨ O que você vai receber</h3>
-
-      <div class="features-grid">
-        <div class="feature">
-          <div class="feature-icon">📝</div>
-          <div class="feature-title">Scripts Completos</div>
-          <div class="feature-text">Roteiros de 30s a 90s prontos para gravar — do gancho até o encerramento.</div>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">🎬</div>
-          <div class="feature-title">Formatos Variados</div>
-          <div class="feature-text">Reels, vídeos cinematográficos, carrosseis — tudo otimizado para cada plataforma.</div>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">💬</div>
-          <div class="feature-title">Legendas Prontas</div>
-          <div class="feature-text">Cada roteiro vem com legenda otimizada para engajamento e copy estratégico.</div>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">🎯</div>
-          <div class="feature-title">Objetivos Claros</div>
-          <div class="feature-text">Cada roteiro tem objetivo estratégico definido — sabe exatamente o que entregar.</div>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">📊</div>
-          <div class="feature-title">Cronograma</div>
-          <div class="feature-text">Timeline de 8 semanas com datas, frequências e indicações de produção.</div>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">🔗</div>
-          <div class="feature-title">Pronto para Executar</div>
-          <div class="feature-text">Cada roteiro é auto-contido — tudo que você precisa para começar.</div>
-        </div>
-      </div>
 
     </div>
   </div>
@@ -548,11 +525,8 @@ footer {
     <h3>Pronto para começar?</h3>
     <p>Acesse o documento completo com todos os 10 roteiros detalhados, scripts prontos e cronograma de implementação.</p>
     <div class="buttons">
-      <a href="#" onclick="openRoteiros(); return false;" class="btn btn-primary">
+      <a href="https://mcoelhoa.github.io/links/roteiros_drbenito_clinicasorriso.html" class="btn btn-primary" target="_blank">
         📖 Acessar Roteiros Completos
-      </a>
-      <a href="#" onclick="openInfo(); return false;" class="btn btn-secondary">
-        ℹ️ Mais Informações
       </a>
     </div>
   </div>
@@ -564,82 +538,6 @@ footer {
   </footer>
 </div>
 
-<!-- MODAL ROTEIROS -->
-<div id="roteirosModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeRoteiros()">&times;</span>
-    <div class="modal-title">📖 Acessar Roteiros Completos</div>
-    <div class="modal-text">
-      Os roteiros estratégicos estão disponíveis em um documento interativo e profissional.
-    </div>
-    <div class="modal-text" style="font-weight: 600; color: #2563eb;">
-      Escolha como você prefere acessar:
-    </div>
-    <ul class="modal-list">
-      <li><strong>Google Drive:</strong> <a href="#" style="color: #2563eb; text-decoration: none;">Abrir no Google Drive</a></li>
-      <li><strong>Download:</strong> <a href="roteiros_drbenito_clinicasorriso.html" download style="color: #2563eb; text-decoration: none;">Baixar arquivo HTML (offline)</a></li>
-      <li><strong>Visualizar inline:</strong> <a href="#" onclick="window.location.href='roteiros_drbenito_clinicasorriso.html'; return false;" style="color: #2563eb; text-decoration: none;">Abrir em nova aba</a></li>
-    </ul>
-    <div class="modal-text" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e5e5; font-size: 0.9rem; color: #666;">
-      <strong>Dica:</strong> O documento é interativo — clique em cada roteiro para expandir e ver todos os detalhes: gancho, script completo, legenda sugerida e objetivo estratégico.
-    </div>
-  </div>
-</div>
-
-<!-- MODAL INFO -->
-<div id="infoModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeInfo()">&times;</span>
-    <div class="modal-title">ℹ️ Sobre Esta Campanha</div>
-    <div class="modal-text">
-      <strong>Objetivo:</strong> Apresentar a Nova Clínica Sorriso como expansão natural da autoridade já consolidada do Dr. Benito Coelho em implantes dentários.
-    </div>
-    <div class="modal-text">
-      <strong>Estratégia:</strong> Não é um novo começo — é uma evolução. A credibilidade existente é transferida para todas as especialidades da nova clínica.
-    </div>
-    <div class="modal-text">
-      <strong>Timeline:</strong> 8 semanas de conteúdo estratégico em 3 fases:
-    </div>
-    <ul class="modal-list">
-      <li><strong>Fase 1 (Semanas 1-2):</strong> O anúncio da evolução</li>
-      <li><strong>Fase 2 (Semanas 3-6):</strong> Transferência de autoridade</li>
-      <li><strong>Fase 3 (Semanas 7-8):</strong> O lançamento e conversão</li>
-    </ul>
-    <div class="modal-text">
-      <strong>Resultado Esperado:</strong> 30-50 agendamentos no primeiro mês de operação, com agenda ocupada e prova social imediata.
-    </div>
-  </div>
-</div>
-
-<script>
-function openRoteiros() {
-  document.getElementById('roteirosModal').style.display = 'block';
-}
-
-function closeRoteiros() {
-  document.getElementById('roteirosModal').style.display = 'none';
-}
-
-function openInfo() {
-  document.getElementById('infoModal').style.display = 'block';
-}
-
-function closeInfo() {
-  document.getElementById('infoModal').style.display = 'none';
-}
-
-window.onclick = function(event) {
-  var roteirosModal = document.getElementById('roteirosModal');
-  var infoModal = document.getElementById('infoModal');
-
-  if (event.target == roteirosModal) {
-    roteirosModal.style.display = 'none';
-  }
-  if (event.target == infoModal) {
-    infoModal.style.display = 'none';
-  }
-}
-</script>
 
 </body>
 </html>
