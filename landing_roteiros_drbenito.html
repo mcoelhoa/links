@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova Clínica Sorriso — Roteiros Estratégicos | Dr. Benito Coelho</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, #0a2847 0%, #1a4d6d 100%);
+  min-height: 100vh;
+  color: #1a1a1a;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 24px;
+  color: #0a2847;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.logo-text {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.content {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  margin-bottom: 2rem;
+}
+
+.content-header {
+  background: linear-gradient(135deg, #0a2847 0%, #1a4d6d 100%);
+  padding: 2.5rem 2rem;
+  color: #fff;
+}
+
+.content-header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.content-header p {
+  font-size: 1rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.content-body {
+  padding: 2.5rem 2rem;
+}
+
+.big-idea {
+  background: #f0f8ff;
+  border-left: 4px solid #2563eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.big-idea-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2563eb;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.big-idea-text {
+  font-size: 1.1rem;
+  color: #0a2847;
+  line-height: 1.7;
+}
+
+.phases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.phase-card {
+  background: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.phase-card:hover {
+  border-color: #2563eb;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.1);
+  transform: translateY(-4px);
+}
+
+.phase-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+}
+
+.phase-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.phase-desc {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.phase-week {
+  display: inline-block;
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #0a2847 0%, #1a4d6d 100%);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.cta-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 1rem 1.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #0a2847;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.3);
+  transform: translateY(-2px);
+}
+
+.features {
+  margin-bottom: 2rem;
+}
+
+.features-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature {
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  border-left: 3px solid #2563eb;
+}
+
+.feature-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.feature-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.feature-text {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+footer {
+  text-align: center;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+  padding: 2rem;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .content-body {
+    padding: 1.5rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .phases {
+    grid-template-columns: 1fr;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  animation: fadeIn 0.3s;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 2% auto;
+  padding: 2rem;
+  border: 1px solid #888;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.close:hover {
+  color: #000;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0a2847;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.modal-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.modal-list {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.modal-list li {
+  padding: 0.5rem 0;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.95rem;
+}
+
+.modal-list li:before {
+  content: "✓ ";
+  color: #2563eb;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <div class="logo-area">
+      <div class="logo">UM</div>
+      <div class="logo-text">Unit Media</div>
+    </div>
+    <h1>Nova Clínica Sorriso</h1>
+    <p class="subtitle">Campanha Estratégica de Pré-Lançamento</p>
+    <p class="date">📅 Abril 2026 — Dr. Benito Coelho</p>
+  </header>
+
+  <div class="content">
+    <div class="content-header">
+      <h2>Roteiros Estratégicos</h2>
+      <p>10 roteiros profissionais organizados em 3 fases de implementação (8 semanas)</p>
+    </div>
+
+    <div class="content-body">
+      <div class="big-idea">
+        <div class="big-idea-title">💡 Big Idea Central</div>
+        <div class="big-idea-text">"O especialista que você já confia agora tem um time à sua altura." A campanha transfere e multiplica a autoridade já consolidada em implantes para todas as especialidades da nova clínica.</div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-number">10</div>
+          <div class="stat-label">Roteiros Completos</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Fases Estratégicas</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">8</div>
+          <div class="stat-label">Semanas de Campanha</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem; color: #1a1a1a;">📋 As 3 Fases</h3>
+
+      <div class="phases">
+        <div class="phase-card">
+          <div class="phase-number">01</div>
+          <div class="phase-title">O Anúncio da Evolução</div>
+          <div class="phase-desc">Apresentar a expansão usando a credibilidade já consolidada como ponto de partida.</div>
+          <div class="phase-week">Semanas 1-2</div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-number">02</div>
+          <div class="phase-title">Transferência de Autoridade</div>
+          <div class="phase-desc">Estabelecer expertise no novo espaço e apresentar o time de profissionais.</div>
+          <div class="phase-week">Semanas 3-6</div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-number">03</div>
+          <div class="phase-title">O Lançamento</div>
+          <div class="phase-desc">Ativar base de pacientes e converter em primeiros agendamentos da nova clínica.</div>
+          <div class="phase-week">Semanas 7-8</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem; color: #1a1a1a; margin-top: 2rem;">✨ O que você vai receber</h3>
+
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">📝</div>
+          <div class="feature-title">Scripts Completos</div>
+          <div class="feature-text">Roteiros de 30s a 90s prontos para gravar — do gancho até o encerramento.</div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">🎬</div>
+          <div class="feature-title">Formatos Variados</div>
+          <div class="feature-text">Reels, vídeos cinematográficos, carrosseis — tudo otimizado para cada plataforma.</div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">💬</div>
+          <div class="feature-title">Legendas Prontas</div>
+          <div class="feature-text">Cada roteiro vem com legenda otimizada para engajamento e copy estratégico.</div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">🎯</div>
+          <div class="feature-title">Objetivos Claros</div>
+          <div class="feature-text">Cada roteiro tem objetivo estratégico definido — sabe exatamente o que entregar.</div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">📊</div>
+          <div class="feature-title">Cronograma</div>
+          <div class="feature-text">Timeline de 8 semanas com datas, frequências e indicações de produção.</div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">🔗</div>
+          <div class="feature-title">Pronto para Executar</div>
+          <div class="feature-text">Cada roteiro é auto-contido — tudo que você precisa para começar.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h3>Pronto para começar?</h3>
+    <p>Acesse o documento completo com todos os 10 roteiros detalhados, scripts prontos e cronograma de implementação.</p>
+    <div class="buttons">
+      <a href="#" onclick="openRoteiros(); return false;" class="btn btn-primary">
+        📖 Acessar Roteiros Completos
+      </a>
+      <a href="#" onclick="openInfo(); return false;" class="btn btn-secondary">
+        ℹ️ Mais Informações
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="divider"></div>
+    <p><strong>Unit Media</strong> — Especialistas em Marketing e Vendas para Clínicas</p>
+    <p style="margin-top: 0.5rem; opacity: 0.8;">Campanha Estratégica de Pré-Lançamento | Dr. Benito Coelho | Nova Clínica Sorriso</p>
+  </footer>
+</div>
+
+<!-- MODAL ROTEIROS -->
+<div id="roteirosModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeRoteiros()">&times;</span>
+    <div class="modal-title">📖 Acessar Roteiros Completos</div>
+    <div class="modal-text">
+      Os roteiros estratégicos estão disponíveis em um documento interativo e profissional.
+    </div>
+    <div class="modal-text" style="font-weight: 600; color: #2563eb;">
+      Escolha como você prefere acessar:
+    </div>
+    <ul class="modal-list">
+      <li><strong>Google Drive:</strong> <a href="#" style="color: #2563eb; text-decoration: none;">Abrir no Google Drive</a></li>
+      <li><strong>Download:</strong> <a href="roteiros_drbenito_clinicasorriso.html" download style="color: #2563eb; text-decoration: none;">Baixar arquivo HTML (offline)</a></li>
+      <li><strong>Visualizar inline:</strong> <a href="#" onclick="window.location.href='roteiros_drbenito_clinicasorriso.html'; return false;" style="color: #2563eb; text-decoration: none;">Abrir em nova aba</a></li>
+    </ul>
+    <div class="modal-text" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e5e5; font-size: 0.9rem; color: #666;">
+      <strong>Dica:</strong> O documento é interativo — clique em cada roteiro para expandir e ver todos os detalhes: gancho, script completo, legenda sugerida e objetivo estratégico.
+    </div>
+  </div>
+</div>
+
+<!-- MODAL INFO -->
+<div id="infoModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeInfo()">&times;</span>
+    <div class="modal-title">ℹ️ Sobre Esta Campanha</div>
+    <div class="modal-text">
+      <strong>Objetivo:</strong> Apresentar a Nova Clínica Sorriso como expansão natural da autoridade já consolidada do Dr. Benito Coelho em implantes dentários.
+    </div>
+    <div class="modal-text">
+      <strong>Estratégia:</strong> Não é um novo começo — é uma evolução. A credibilidade existente é transferida para todas as especialidades da nova clínica.
+    </div>
+    <div class="modal-text">
+      <strong>Timeline:</strong> 8 semanas de conteúdo estratégico em 3 fases:
+    </div>
+    <ul class="modal-list">
+      <li><strong>Fase 1 (Semanas 1-2):</strong> O anúncio da evolução</li>
+      <li><strong>Fase 2 (Semanas 3-6):</strong> Transferência de autoridade</li>
+      <li><strong>Fase 3 (Semanas 7-8):</strong> O lançamento e conversão</li>
+    </ul>
+    <div class="modal-text">
+      <strong>Resultado Esperado:</strong> 30-50 agendamentos no primeiro mês de operação, com agenda ocupada e prova social imediata.
+    </div>
+  </div>
+</div>
+
+<script>
+function openRoteiros() {
+  document.getElementById('roteirosModal').style.display = 'block';
+}
+
+function closeRoteiros() {
+  document.getElementById('roteirosModal').style.display = 'none';
+}
+
+function openInfo() {
+  document.getElementById('infoModal').style.display = 'block';
+}
+
+function closeInfo() {
+  document.getElementById('infoModal').style.display = 'none';
+}
+
+window.onclick = function(event) {
+  var roteirosModal = document.getElementById('roteirosModal');
+  var infoModal = document.getElementById('infoModal');
+
+  if (event.target == roteirosModal) {
+    roteirosModal.style.display = 'none';
+  }
+  if (event.target == infoModal) {
+    infoModal.style.display = 'none';
+  }
+}
+</script>
+
+</body>
+</html>
